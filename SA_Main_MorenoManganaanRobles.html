@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline&family=STIX+Two+Text:ital,wght@0,400..700;1,400..700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Oswald:wght@200..700&family=Pixelify+Sans:wght@400..700&family=Playwrite+AU+SA:wght@100..400&family=Playwrite+IS:wght@100..400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Nothing+You+Could+Do&family=Oswald:wght@200..700&family=Pixelify+Sans:wght@400..700&family=Playwrite+AU+SA:wght@100..400&family=Playwrite+IS:wght@100..400&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Coral+Pixels&family=Nothing+You+Could+Do&family=Oswald:wght@200..700&family=Parisienne&family=Pixelify+Sans:wght@400..700&family=Playwrite+AU+SA:wght@100..400&family=Playwrite+IS:wght@100..400&display=swap');
+        body{
+            overflow-x: hidden;
+            font-family: "Roboto", sans-serif;
+            font-style: normal;
+            font-variation-settings: "wdth" 100;
+        }
+        .bgpurple {
+            background-color: #AC1754;
+        }
+        .bgpurple2 {
+            background-color: #E53888;
+        }
+        .bgpurple3 {
+            background-color: #670d32;
+        }
+        .width-short {
+            width: 60%;
+        }
+        .text-large {
+            font-size: 200%;
+        }
+        .box-size {
+            width: 250px;
+            height: 270px;
+            margin: 20px;
+        }
+        .idk{
+            width: 150px;
+            height: 150px;
+            margin: 15px;
+            cursor: pointer;
+        }
+        .coral-pixels-regular {
+            font-family: "Coral Pixels", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .nothing-you-could-do-regular {
+            font-family: "Nothing You Could Do", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .parisienne-regular {
+            font-family: "Parisienne", cursive;
+            font-weight: 400;
+            font-style: normal;
+        }
+        .text-medium {
+            font-size: 150%;
+        }
+        #forklift{
+            color: blue;
+            display: none;
+        }
+        #stuff_toy{
+            color: red;
+            display: none;
+        }
+        #furniture{
+            color: violet;
+            display: none;
+        }
+        #album{
+            display: none;
+        }
+        .inline{
+            display: inline;
+        }
+        #Hurricane{
+            display: inline;
+        }
+        .Position{
+            display: flex;
+        }
+        #Selector{
+            color: green;
+            width: 200px;
+            height: 200px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-image: none;
+        }
+        .category {
+            margin-bottom: 10px;
+            background-color: #fce4ea;
+            padding-bottom: 10px;
+            display: inline;
+        }
+        .category button {
+            background-color: #E53888;
+            border-color: #fac1d5;
+            border-width: 5px;
+            color: #fbf3f5;
+            font-size: 20px;
+            font-size: 18px;
+            margin: 5px;
+            padding-top: 10px;
+            width: 100px;
+        }
+        button {
+            background-color: #E53888;
+            border-color: #fac1d5;
+            border-width: 2px;
+            color: #fbf3f5;
+            font-size: 10px;
+            margin: 10px;
+            font-size: 18px;
+            width: 100px;
+        }
+    </style>
+    <script>
+        var box=[]
+        var x = 0;
+        var name = "";
+        var value = 0;
+        var cat = 0;
+        var total = 0;
+        var INEFFICIENCY = 0;
+        function Cat_1(){
+            cat=1;
+            Cat_picker();
+        }
+        function Cat_2(){
+            cat=2;
+            Cat_picker();
+        }
+        function Cat_3(){
+            cat=3;
+            Cat_picker();
+        }
+        function Cat_4(){
+            cat=4;
+            Cat_picker();
+        }
+        function Cat_picker(){
+            document.getElementById("forklift").style.display = "none";
+            document.getElementById("stuff_toy").style.display = "none";
+            document.getElementById("furniture").style.display = "none";
+            document.getElementById("album").style.display = "none";
+            document.getElementById("Hurricane").style.display = "none";
+            if (cat == 1){
+                document.getElementById("forklift").style.display = "inline";
+            }
+            if (cat == 2){
+                document.getElementById("stuff_toy").style.display = "inline";             
+            }
+            if (cat == 3){  
+                document.getElementById("furniture").style.display = "inline";                
+            }
+            if (cat == 4){
+                document.getElementById("album").style.display = "inline";                
+            }
+        }
+        function Electrical(){
+            name = "Reliable Electric and Diesel Forklift";
+            value = 830505;
+            document.getElementById("Selector").style.backgroundImage="url(electric_n_diesel.WEBP)"
+            document.getElementById("Name").innerHTML = "Name: Reliable Electric and Diesel Forklift"
+            document.getElementById("Price").innerHTML = "Price: ₹830, 505"
+        }
+        function Terrain(){
+            name = "4 Wheel All Terrain Forklift Truck";
+            value = 1432344;
+            document.getElementById("Selector").style.backgroundImage="url(all_terrain_forklift_truck.webp)"
+            document.getElementById("Name").innerHTML = "Name: 4 Wheel All Terrain Forklift Truck"
+            document.getElementById("Price").innerHTML = "Price: ₹1, 432, 344"
+        }
+        function WheelElectric(){
+            name = "Toyota 8 series 4 Wheel Electric CB";
+            value = 3000000000;
+            document.getElementById("Selector").style.backgroundImage="url(electric_cb.webp)"
+            document.getElementById("Name").innerHTML = "Name: Toyota 8 series 4 Wheel Electric CB"
+            document.getElementById("Price").innerHTML = "Price: ₹3, 000, 000, 000"
+        }
+        function Diesel(){
+            name = "Toyota 8 Series Diesel";
+            value = 4500000000;
+            document.getElementById("Selector").style.backgroundImage="url(8seriesDiesel.webp)"
+            document.getElementById("Name").innerHTML = "Name: Toyota 8 Series Diesel"
+            document.getElementById("Price").innerHTML = "Price: ₹4, 500, 000, 000"
+        }
+        function Traigo(){
+            name = "Toyota Traigo 80, 4-wheel";
+            value = 3500000000;
+            document.getElementById("Selector").style.backgroundImage="url(traigo80.webp)"
+            document.getElementById("Name").innerHTML = "Name: Toyota Traigo 80, 4-wheel"
+            document.getElementById("Price").innerHTML = "Price: ₹3, 500, 000, 000"
+        }
+        function Capybara(){
+            name = "Bread Capybara";
+            value = 1106;
+            document.getElementById("Selector").style.backgroundImage="url(Bread_capybara.webp)"
+            document.getElementById("Name").innerHTML = "Name: Bread Capybara"
+            document.getElementById("Price").innerHTML = "Price: ₹1, 106"
+        }
+        function Cake(){
+            name = "Amuseables Birthday Cake";
+            value = 2367;
+            document.getElementById("Selector").style.backgroundImage="url(cake.jpg)"
+            document.getElementById("Name").innerHTML = "Name: Amuseables Birthday Cake"
+            document.getElementById("Price").innerHTML = "Price: ₹2, 367"
+        }
+        function Cow(){
+            name = "Rainbow";
+            value = 2367;
+            document.getElementById("Selector").style.backgroundImage="url(cow.jpg)"
+            document.getElementById("Name").innerHTML = "Name: Mooliet Cow"
+            document.getElementById("Price").innerHTML = "Price: ₹2, 367"
+        }
+        function Duck(){
+            name = "7 in 1 Duck Stuffed Anima";
+            value = 1549;
+            document.getElementById("Selector").style.backgroundImage="url(Duck.webp)"
+            document.getElementById("Name").innerHTML = "Name: 7 in 1 Duck Stuffed Anima"
+            document.getElementById("Price").innerHTML = "Price: ₹1, 549"
+        }
+        function Elephant(){
+            name = "GUND Animated Flappy the Elephant";
+            value = 2499;
+            document.getElementById("Selector").style.backgroundImage="url(elephant.jpg)"
+            document.getElementById("Name").innerHTML = "Name: GUND Animated Flappy the Elephant"
+            document.getElementById("Price").innerHTML = "Price: ₹2, 499"
+        }
+        function Table(){
+            name = "KRUZO Minimalist Home Office Desk Table";
+            value = 1650;
+            document.getElementById("Selector").style.backgroundImage="url(Table.jpg)"
+            document.getElementById("Name").innerHTML = "Name: KRUZO Minimalist Home Office Desk Table"
+            document.getElementById("Price").innerHTML = "Price: ₹1, 650"
+        }
+        function TV(){
+            name = "ACE 40'' UHD Smart Google TV";
+            value = 15559;
+            document.getElementById("Selector").style.backgroundImage="url(TV.jpg)"
+            document.getElementById("Name").innerHTML = "Name: ACE 40'' UHD Smart Google TV"
+            document.getElementById("Price").innerHTML = "Price: ₹15, 559"
+        }
+        function Bed(){
+            name = "Foldable Bed";
+            value = 4197;
+            document.getElementById("Selector").style.backgroundImage="url(Foldable_Bed.jpg)"
+            document.getElementById("Name").innerHTML = "Name: Foldable Bed"
+            document.getElementById("Price").innerHTML = "Price: ₹4, 197"
+        }
+        function Bookcase(){
+            name = "Adjustable Simple Wooden Bookcase";
+            value = 389;
+            document.getElementById("Selector").style.backgroundImage="url(Bookcase.jpg)"
+            document.getElementById("Name").innerHTML = "Name: Adjustable Simple Wooden Bookcase"
+            document.getElementById("Price").innerHTML = "Price: ₹389"
+        }
+        function GChair(){
+            name = "TTRacing Swift X 2020 Gaming Chair";
+            value = 2895;
+            document.getElementById("Selector").style.backgroundImage="url(Gaming_Chair.jpg)"
+            document.getElementById("Name").innerHTML = "Name: TTRacing Swift X 2020 Gaming Chair"
+            document.getElementById("Price").innerHTML = "Price: ₹2, 895"
+        }
+        function TPAB(){
+            name = "To Pimp A Butterfly Vinyl";
+            value = 1795;
+            document.getElementById("Selector").style.backgroundImage="url(TPAB_Vinyl.jpg)"
+            document.getElementById("Name").innerHTML = "Name: To Pimp A Butterfly Vinyl"
+            document.getElementById("Price").innerHTML = "Price: ₹1, 795"
+        }
+        function Igor(){
+            name = "Igor Vinyl";
+            value = 2690;
+            document.getElementById("Selector").style.backgroundImage="url(Igor_Vinyl.jpg)"
+            document.getElementById("Name").innerHTML = "Name: Igor Vinyl"
+            document.getElementById("Price").innerHTML = "Price: ₹2, 690"
+        }
+        function FlowerBoy(){
+            name = "Flower Boy Vinyl";
+            value = 2999;
+            document.getElementById("Selector").style.backgroundImage="url(FlowerBoy_Vinyl.jpg)"
+            document.getElementById("Name").innerHTML = "Name: Flower Boy Vinyl"
+            document.getElementById("Price").innerHTML = "Price: ₹2, 999"
+        }
+        function MBDTF(){
+            name = "My Beautiful Dark Twisted Fantasy Vinyl";
+            value = 3999;
+            document.getElementById("Selector").style.backgroundImage="url(MBDTF_Vinyl.jpg)"
+            document.getElementById("Name").innerHTML = "Name: My Beautiful Dark Twisted Fantasy Vinyl"
+            document.getElementById("Price").innerHTML = "Price: ₹3, 999"
+        }
+        function MMESYF(){
+            name = "Melt My Eyez See Your Future Vinyl";
+            value = 1890;
+            document.getElementById("Selector").style.backgroundImage="url(MMESYF_Vinyl.jpg)"
+            document.getElementById("Name").innerHTML = "Name: Melt My Eyez See Your Future Vinyl"
+            document.getElementById("Price").innerHTML = "Price: ₹1, 890"
+        }
+        function AAAAH(){
+            x=x+1
+            var order = document.createElement("div");
+            order.textContent=name;
+            order.id=x;
+            order.style.border="solid";
+            order.style.borderColor="Pink";
+            order.style.borderWidth="3px";
+            var price = document.createElement("p");
+            price.id=value
+            price.textContent=value;
+            price.className="text-muted"
+            var button = document.createElement("button");
+            button.style.marginTop="20px"
+            button.style.fontSize="15px"
+            button.textContent = "Remove";
+            button.addEventListener('click', function() {
+                INEFFICIENCY=price.id * -1;
+                total = total+INEFFICIENCY
+                document.getElementById("total").innerHTML=total;
+                document.getElementById(order.id).style.display = "none";
+                var urg = order.id
+                box.splice(urg-1, 1)
+                var ITSOVER = document.getElementById('cust_order');
+                ITSOVER.value = JSON.stringify(box);
+            });
+            var br = document.createElement("br");
+            total = total+value
+            document.getElementById("total").innerHTML=total;
+            order.appendChild(price)
+            order.appendChild(button)
+            order.appendChild(br)
+            document.getElementById("E").appendChild(order);
+            var Popcorners = { prod_name: name, prod_price: value };
+            box.push(Popcorners);
+            var ITSOVER = document.getElementById('cust_order');
+            ITSOVER.value = JSON.stringify(box);
+        }
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bgpurple3 navbar-dark fixed-top">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="SA_Main_MorenoManganaanRobles.html">Homepage</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="SA_Company_Page.html">About Company</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div class="bgpurple p-5 text-center container-fluid mt-5">
+        <h1 class="nothing-you-could-do-regular">The <span class="coral-pixels-regular text-large">EVERYTHING</span> Store (with <span class="parisienne-regular text-white text-medium">Forklifts</span>)</h1>
+    </div>
+
+    <div class="row">
+        <div class="category col-12">
+            <button onclick="Cat_1()">Forklift</button>
+            <button onclick="Cat_2()">Stuff Toy</button>
+            <button onclick="Cat_3()">Furniture</button>
+            <button onclick="Cat_4()">Album</button>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="row">
+            <div class="col-0" id="Hurricane">
+                <div class="text-center mt-2 ms-4 bgpurple2 text-white text-large width-short rounded-pill">
+                    <p>Catalog</p>
+                </div>
+                <div class="Position">
+                    <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                        <div class="idk">This is where the image of the item shows up! Click to add to cart!</div>
+                        <h6>This is where the name of the product is!</h6>
+                        <p>This is the price!</p>
+                    </div>
+                    <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                        <div class="idk">This is where the image of the item shows up! Click to add to cart!</div>
+                        <h6>This is where the name of the product is!</h6>
+                        <p>This is the price!</p>
+                    </div>
+                    <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                        <div class="idk">This is where the image of the item shows up! Click to add to cart!</div>
+                        <h6>This is where the name of the product is!</h6>
+                        <p>This is the price!</p>
+                    </div>
+                    <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                        <div class="idk">This is where the image of the item shows up! Click to add to cart!</div>
+                        <h6>This is where the name of the product is!</h6>
+                        <p>This is the price!</p>
+                    </div>
+                    <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                        <div class="idk">This is where the image of the item shows up! Click to add to cart!</div>
+                        <h6>This is where the name of the product is!</h6>
+                        <p>This is the price!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="inline" id="forklift">
+                    <div class="text-center mt-2 ms-4 bgpurple2 text-white text-large width-short rounded-pill">
+                        <p>Forklift</p>
+                    </div>
+                    <div class="Position">
+                        <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                            <img src="electric_n_diesel.WEBP" alt="forklift" class="idk" onclick="Electrical()">
+                            <h6>Reliable Electric and Diesel Forklift</h6>
+                            <p>₹830, 505</p>
+                        </div>
+                        <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                            <img src="all_terrain_forklift_truck.webp" alt="forklift" class="idk" onclick="Terrain()">
+                            <h6>4 Wheel All Terrain Forklift Truck</h6>
+                            <p>₹1, 432, 344</p>
+                        </div>
+                        <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                            <img src="electric_cb.webp" alt="forklift" class="idk" onclick="WheelElectric()">
+                            <h6>Toyota 8 series 4 Wheel Electric CB</h6>
+                            <p>₹3, 000, 000, 000</p>
+                        </div>
+                        <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                            <img src="8seriesDiesel.webp" alt="forklift" class="idk" onclick="Diesel()">
+                            <h6>Toyota 8 Series Diesel</h6>
+                            <p>₹4, 500, 000, 000</p>
+                        </div>
+                        <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                            <img src="traigo80.webp" alt="forklift" class="idk" onclick="Traigo()">
+                            <h6>Toyota Traigo 80, 4-wheel</h6>
+                            <p>₹3, 500, 000, 000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline" id="stuff_toy">
+                    <div class="text-center mt-2 ms-4 bgpurple2 text-white text-large width-short rounded-pill">
+                        <p>Stuffed Toys</p>
+                    </div>
+                    <div class="Position">
+                        <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                            <img src="Bread_capybara.webp" alt="stuffed toy" class="idk" onclick="Capybara()">
+                            <h6>Bread Capybara</h6>
+                            <p>₹1, 106</p>
+                        </div>
+                        <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                            <img src="cake.jpg" alt="stuffed toy" class="idk" onclick="Cake()">
+                            <h6>Amuseables Birthday Cake</h6>
+                            <p>₹2, 367</p>
+                        </div>
+                        <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                            <img src="cow.jpg" alt="stuffed toy" class="idk" onclick="Cow()">
+                            <h6>Mooliet Cow</h6>
+                            <p>₹2, 367</p>
+                        </div>
+                        <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                            <img src="Duck.webp" alt="stuffed toy" class="idk" onclick="Duck()">
+                            <h6>7 in 1 Duck Stuffed Animal</h6>
+                            <p>₹1, 549</p>
+                        </div>
+                        <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                            <img src="elephant.jpg" alt="stuffed toy" class="idk" onclick="Elephant()">
+                            <h6>GUND Animated Flappy the Elephant</h6>
+                            <p>₹2, 499</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline" id="furniture">
+                    <div class="text-center mt-2 ms-4 bgpurple2 text-white text-large width-short rounded-pill">
+                        <p>Furniture</p>
+                    </div>
+                    <div class="Position">
+                        <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                            <img src="Table.jpg" alt="furniture" class="idk" onclick="Table()">
+                            <h6>KRUZO Minimalist Home Office Desk Table</h6>
+                            <p>₹1, 650</p>
+                        </div>
+                        <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                            <img src="TV.jpg" alt="furniture" class="idk" onclick="TV()">
+                            <h6>ACE 40" UHD Smart Google TV</h6>
+                            <p>₹15, 559</p>
+                        </div>
+                        <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                            <img src="Foldable_Bed.jpg" alt="furniture" class="idk" onclick="Bed()">
+                            <h6>Foldable Bed</h6>
+                            <p>₹4, 197</p>
+                        </div>
+                        <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                            <img src="Bookcase.jpg" alt="furniture" class="idk" onclick="Bookcase()">
+                            <h6>Adjustable Simple Wooden Bookcase</h6>
+                            <p>₹389</p>
+                        </div>
+                        <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                            <img src="Gaming_Chair.jpg" alt="furniture" class="idk" onclick="GChair()">
+                            <h6>TTRacing Swift X 2020 Gaming Chair</h6>
+                            <p>₹2, 895</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="inline" id="album">
+                    <div class="text-center mt-2 ms-4 bgpurple2 text-white text-large width-short rounded-pill">
+                        <p>Album Vinyls</p>
+                    </div>
+                    <div class="Position">
+                        <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                            <img src="TPAB_Vinyl.jpg" alt="album vinyl" class="idk" onclick="TPAB()">
+                            <h6>To Pimp A Butterfly Vinyl</h6>
+                            <p>₹1, 795</p>
+                        </div>
+                        <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                            <img src="Igor_Vinyl.jpg" alt="album vinyl" class="idk" onclick="Igor()">
+                            <h6>Igor Vinyl</h6>
+                            <p>₹2, 690</p>
+                        </div>
+                        <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                            <img src="FlowerBoy_Vinyl.jpg" alt="album vinyl" class="idk" onclick="FlowerBoy()">
+                            <h6>Flower Boy Vinyl</h6>
+                            <p>₹2, 999</p>
+                        </div>
+                        <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                            <img src="MBDTF_Vinyl.jpg" alt="album vinyl" class="idk" onclick="MBDTF()">
+                            <h6>My Beautiful Dark Twisted Fantasy Vinyl</h6>
+                            <p>₹3, 999</p>
+                        </div>
+                        <div class="p-1 border border-dark rounded border-3 me-2 box-size">
+                            <img src="MMESYF_Vinyl.jpg" alt="album vinyl" class="idk" onclick="MMESYF()">
+                            <h6>Melt My Eyez See Your Future Vinyl</h6>
+                            <p>₹1, 890</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row"> 
+            <div class="col-2 border border-2 border-purple">
+                <button onclick="AAAAH()" id="Butane">ADD+</button>
+                <h4>Cart</h4>
+                Total:<div id="total">0</div>
+                <div id="E"></div><br>
+            </div>
+            <div class="col-5 border border-2 border-purple">
+                <h4 class="mt-2">Item Display (<span class="text-danger">*are you sure?</span>)</h4>
+                <div id="Selector"></div>
+                <p id="Name"></p>
+                <p id="Price"></p>
+            </div> 
+            <div class="col-5 border border-2 border-purple">
+                <form action="http://47.129.9.35/cs3/checkout.php" method="post" class="was-validated">
+                    <div class="mb-1">
+                        <h4>Name</h4>
+                        <input type="text" name="cust_name" placeholder="Enter name" class="form-control border border-2 border-purple" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback mb-1">Please fill out this field.</div>
+                    </div>
+                    <div class="mb-1">
+                        <h4>Address</h4>
+                        <input type="text" name="cust_addr" placeholder="Enter address" class="form-control border border-2 border-purple" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback mb-1">Please fill out this field.</div>
+                    </div>
+                    <div class="mb-1">
+                        <h4>Email</h4>
+                        <input type="text" name="cust_email" placeholder="Enter email address" class="form-control border border-2 border-purple" required>
+                        <div class="valid-feedback">Valid.</div>
+                        <div class="invalid-feedback mb-1">Please fill out this field.</div>
+                    </div>
+                    <input type="hidden" name="cust_order" id="cust_order">
+                    <button>Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-center text-white bgpurple3 p-1">
+        <p>Copyright &copy; 2025. The <span class="coral-pixels-regular text-large">EVERYTHING</span> Store (with <span class="parisienne-regular text-white text-medium">Forklifts</span>)</p>
+    </div>
+</body>
+</html>
